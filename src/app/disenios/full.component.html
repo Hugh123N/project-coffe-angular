@@ -1,10 +1,10 @@
 <div class="main-container">
-    <mat-toolbar color="primary" class="topbar telative">
-        <div class="navbar-header">
+    <mat-toolbar color="primary" class="topbar telative" style="display:flex; justify-content: space-between; align-items: center;">
+        <div class="navbar-header" >
             <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed" style="vertical-align: bottom;">
                 <mat-icon>menu</mat-icon>
-            </button><b>
-                <span style="vertical-align: middle;">
+            </button>
+            <b><span style="vertical-align: middle;">
                     <mat-icon>storefront</mat-icon>
                 </span>
             </b>
@@ -15,6 +15,7 @@
         <span fxFlex></span>
         <app-header></app-header>
     </mat-toolbar>
+    <!--pendiente de diseño-->
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
         <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'"
             fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches">

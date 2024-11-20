@@ -12,6 +12,7 @@ import { FullComponent } from './disenios/full.component';
 import { MaterialModule_config } from './material-component/material.module';
 import { MaterialModule } from './sharet/material-module';
 import { SharedModule_config } from './sharet/shared-module';
+import { HttpClientModule } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +21,8 @@ export const appConfig: ApplicationConfig = {
       BrowserModule,
       MatIconModule,
       RouterModule,
+      //conexion a API
+      HttpClientModule
     ),
     MejorVendidoComponent,
     HeaderComponent,
