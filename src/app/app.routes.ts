@@ -9,17 +9,19 @@ export const routes: Routes = [
         path: 'cafe',
         component:FullComponent,
         children:[
-           {path:'',
-            redirectTo:'/cafe/dashboard', 
-            pathMatch:'full'
+            {
+                path:'',
+                loadChildren:()=> import('./material-component/material.routing').then(m => m.MaterialRoutes),
             },
             { 
                 path:'dashboard',
-                loadChildren: 
-                ()=> import('./dashboard/dashboard.routing').then((m) => m.routes_dashboard),
+                loadChildren:()=> import('./dashboard/dashboard.routing').then((m) => m.routes_dashboard),
             },
-            
-            
+            {
+                path:'',
+                redirectTo:'/cafe/dashboard', 
+                pathMatch:'full'
+            }  
         ]
     },
     {path:'**', component:HomeComponent}
