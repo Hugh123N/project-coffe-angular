@@ -13,6 +13,12 @@ export const routes: Routes = [
             redirectTo:'/cafe/dashboard', 
             pathMatch:'full'
             },
+            { 
+                path:'dashboard',
+                loadChildren: 
+                ()=> import('./dashboard/dashboard.routing').then((m) => m.routes_dashboard),
+            },
+            
             
         ]
     },
