@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit{
       this.signupForm = this.formBuilder.group({
         name:[null,[Validators.required, Validators.pattern(GlobalConstans.nameRegex)]],
         email:[null,[Validators.required, Validators.pattern(GlobalConstans.emailRegex)]],
-        numberContact:[null,[Validators.required, Validators.pattern(GlobalConstans.phoneRegex)]],
+        contactNumber:[null,[Validators.required, Validators.pattern(GlobalConstans.phoneRegex)]],
         password:[null, [Validators.required]],
         confirmPassword:[null,[Validators.required]]})
     }
@@ -89,7 +89,7 @@ export class SignupComponent implements OnInit{
       var data = { // Prepara datos para enviarlos al backend
         name: formData.name,
         email: formData.email,
-        numberContact: formData.numberContact,
+        contactNumber: formData.contactNumber,
         password: formData.password
       }
       // Llama al servicio "signup" para registrar al usuario
