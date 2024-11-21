@@ -13,26 +13,51 @@ import { MaterialModule_config } from './material-component/material.module';
 import { MaterialModule } from './sharet/material-module';
 import { SharedModule_config } from './sharet/shared-module';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
+import { NgxUiLoaderConfig, NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AppComponent } from './app.component';
+
+// Configuración personalizada para ngx-ui-loader
+const ngxUiLoaderConfig:NgxUiLoaderConfig={
+  //Configura aspectos visuales como textos que aparece mientras carga
+  text:"loading...",
+  textColor:"#FFFFFF",
+  textPosition:"center-center",
+  bgsColor:"#7bifa2",
+  fgsColor:"#7bifa2",
+  fgsType:SPINNER.squareJellyBox,
+  fgsSize:100,
+  hasProgressBar:false
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     importProvidersFrom(
+      
       BrowserModule,
-      MatIconModule,
       RouterModule,
+      ReactiveFormsModule,
       //conexion a API
-      HttpClientModule
+      HttpClientModule,
+      NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+      FlexLayoutModule,
+      
     ),
+    AppComponent,
     MejorVendidoComponent,
     HeaderComponent,
     SidebarComponent,
     FullComponent,
+    SignupComponent,
+    
     provideAnimationsAsync(),
 
     ...MaterialModule_config.providers,
     MaterialModule(),
-    ...SharedModule_config.providers
+    ...SharedModule_config.exports
     
-  ], 
+  ] 
 };

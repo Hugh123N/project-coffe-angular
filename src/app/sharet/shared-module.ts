@@ -3,9 +3,10 @@ import { AccordionAnchorDirective, AccordionDirective, AccordionLinkDirective } 
 import { CommonModule } from "@angular/common";
 
 export const SharedModule_config ={
-    
-    providers: [
-        importProvidersFrom(CommonModule)
+    exports:[
+        AccordionAnchorDirective,
+        AccordionLinkDirective,
+        AccordionDirective,
     ],
     declarations: [
         AccordionAnchorDirective,

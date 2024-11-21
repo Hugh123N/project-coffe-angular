@@ -18,7 +18,8 @@ export const MaterialModule_config ={
         FormsModule,
         ReactiveFormsModule,
         CdkTableModule
-     )
+     ),
+     MaterialModule(),
     ],
     declarations:[
         ViewBillProductComponent

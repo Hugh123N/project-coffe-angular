@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { MejorVendidoComponent } from '../mejor-vendido/mejor-vendido.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [MejorVendidoComponent,MatIconModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls:['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-    constructor(){}
+    constructor(private dialog:MatDialog ){}
 
     ngOnInit():void{
-
     }
+
+    //genera un dialog  mostrando dntro el componente SignupComponent
+    handlerSignupAction(){
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.width='550px';
+      this.dialog.open(SignupComponent, dialogConfig)
+    }
+
 }

@@ -5,7 +5,8 @@ import { MediaMatcher } from '@angular/cdk/layout';
   selector: 'app-sidebar',
   standalone: true,
   imports: [],
-  templateUrl: './sidebar.component.html'
+  templateUrl: './sidebar.component.html',
+  styleUrls: []
 })
 export class SidebarComponent {
   mobileQuery: MediaQueryList;
