@@ -8,7 +8,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class UserService {
   url=environment.apiUrl;
 
-
   constructor(private http:HttpClient) { }
 
   signup(data:any){
@@ -16,4 +15,13 @@ export class UserService {
       headers:new HttpHeaders().set('content-type','application/json') //indica que es json
     })
   }
+
+ //metodo para olvido la contraseña 
+  forgotPassword(data:any){
+    return this.http.post(this.url+'/user/olvidoPassword',data,{
+      headers:new HttpHeaders().set('Content-type','application/json') // indica que es json
+    })
+  }
+
+
 }

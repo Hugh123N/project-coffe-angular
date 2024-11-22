@@ -53,12 +53,12 @@ export class SignupComponent implements OnInit{
   responseMessage:any;
 
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder, // Para construir y manejar formularios reactivos.
     private router:Router, 
     private userService:UserService,
-    private snackbarService:SnackbarService,
-    public dialogRef:MatDialogRef<SignupComponent>,
-    private ngxService:NgxUiLoaderService) { }
+    private snackbarService:SnackbarService, // Servicio para mostrar notificaciones emergentes (snackbars) al usuario.
+    public dialogRef:MatDialogRef<SignupComponent>, // Referencia para cerrar o interactuar con el diálogo actual.
+    private ngxService:NgxUiLoaderService) { } // Servicio para mostrar cargadores animados en la interfaz
 
     ngOnInit(): void {
       this.signupForm = this.formBuilder.group({

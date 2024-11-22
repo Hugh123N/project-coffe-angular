@@ -27,7 +27,7 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig={
   textPosition:"center-center",
   bgsColor:"#7bifa2",
   fgsColor:"#7bifa2",
-  fgsType:SPINNER.squareJellyBox,
+  fgsType:SPINNER.squareJellyBox, //la figura que sale en la pantalla
   fgsSize:100,
   hasProgressBar:false
 }
